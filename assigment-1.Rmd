@@ -1,0 +1,40 @@
+---
+title: "Coursera's Reproducible Search: Peer Assessment 1"
+author: "Jorge Mendoza"
+date: "12/5/2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1
+
+  Loading required libraries to proccess data and Graphs
+
+```{r}
+library(ggplot2)
+```
+
+### 2
+  Download and Load the project's data located at "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+
+````{r}
+if(!file.exists('activity.csv')){
+    url <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+    download.file(url=url, destfile='activity.zip', method='curl')
+    unzip('activity.zip')
+}
+activityData <- read.csv('activity.csv')
+````
+
+## 3
+
+Create or process the raw data in order to create the tidy data
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
